@@ -13,6 +13,7 @@
 
 - (void)_resetLaunchConfig
 {
+  [[DUserDefaults alloc] init];
   NSLog(@"_resetLaunchConfig");
 //  [[DUserDefaults sharedInstance] reset];
 }
