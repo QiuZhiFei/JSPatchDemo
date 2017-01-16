@@ -16,6 +16,22 @@
   DUserDefaults *d = [[DUserDefaults alloc] init];
   d.title = @"title";
   NSLog(@"_resetLaunchConfig");
+  
+  [self start:^(NSString *str){
+    NSLog(@"start == %@", str);
+  }];
+}
+
+- (void)start:(void(^)(NSString *))success
+{
+  if (success) {
+    success(@"hello");
+  }
+}
+
++ (void)request:(void(^)(NSString *content, BOOL success))callback
+{
+  callback(@"I'm content", YES);
 }
 
 @end
