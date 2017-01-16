@@ -8,11 +8,25 @@ defineClass("UIViewController", {
             d.reset();
             d.setTitle("patch title");
             console.log(d.title());
+            
+            var blk = block("NSString *", function(ctn) {
+                            console.log(ctn);
+                            })
+            self.start(block("NSString *", blk))
             },
             
-            require('UIViewController').start(block("NSString *", function(ctn) {
-                                                      console.log(ctn);
-                                                      }))
+            start: function(success) {
+            if (success) {
+            success("hello");
+            }
+            }
+            
+            
+//            require('UIViewController').start(block("NSString *", function(ctn) {
+//                                                      console.log(ctn);
+//                                                      }))
+            
+            
 
             });
 

@@ -22,7 +22,7 @@
   }];
 }
 
-- (void)start:(void(^)(NSString *))success
+- (void)start:(void(^)(NSString * name))success
 {
   if (success) {
     success(@"hello");
